@@ -97,6 +97,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- TODO list keymaps
 vim.keymap.set('n', '<leader>ok', 'r<C-K>OK')
 
+-- RUN odin
+vim.keymap.set('n', '<leader>r', ':!odin run .<enter>')
+vim.keymap.set('n', '<leader>b', ':!odin build .<enter>')
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -725,6 +729,7 @@ require('lazy').setup {
       require('mini.surround').setup()
 
       require('mini.jump').setup()
+      require('mini.align').setup()
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
